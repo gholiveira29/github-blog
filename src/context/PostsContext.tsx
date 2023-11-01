@@ -31,7 +31,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
     const fetchPosts = useCallback(async (query = '') => {
         const response = await api.get('/search/issues', {
             params: {
-                q: `repo:gholiveira29/github-blog ${query}`,
+                q: `repo:gholiveira29/issues ${query}`,
             },
         });
         setPosts(response.data.items);

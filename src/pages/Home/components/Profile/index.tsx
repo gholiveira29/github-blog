@@ -9,7 +9,7 @@ import {
 } from './styles';
 import { useEffect, useState } from 'react';
 import { api } from '../../../../lib/axios';
-import { ArrowUDownRight, Buildings, GithubLogo, Users } from 'phosphor-react';
+import { ArrowSquareOut, Buildings, GithubLogo, Users } from 'phosphor-react';
 
 interface User {
     login: string;
@@ -48,7 +48,7 @@ export function Profile() {
                     <h2>{user?.name}</h2>
                     <a href={user?.html_url} target="_blank" rel="noreferrer">
                         {' '}
-                        GITHUB <ArrowUDownRight />
+                        GITHUB <ArrowSquareOut size={20} />
                     </a>
                 </header>
                 <Bio>
@@ -56,17 +56,29 @@ export function Profile() {
                 </Bio>
                 <Details>
                     <div>
-                        <GithubLogo color={theme['base-label']} />
+                        <GithubLogo
+                            color={theme['base-label']}
+                            size={24}
+                            weight="fill"
+                        />
                         <span>{user?.login}</span>
                     </div>
                     {user?.company && (
                         <div>
-                            <Buildings color={theme['base-label']} />
+                            <Buildings
+                                color={theme['base-label']}
+                                size={24}
+                                weight="fill"
+                            />
                             <span>{user?.company}</span>
                         </div>
                     )}
                     <div>
-                        <Users color={theme['base-label']} />
+                        <Users
+                            color={theme['base-label']}
+                            size={24}
+                            weight="fill"
+                        />
                         {<span>{formatedFollowers}</span>}
                     </div>
                 </Details>

@@ -25,7 +25,7 @@ export function Post() {
     const { id } = useParams();
 
     useEffect(() => {
-        api.get(`repos/gholiveira29/issues/issues/${1}`).then((response) => {
+        api.get(`repos/gholiveira29/issues/issues/${id}`).then((response) => {
             setPost(response.data);
         });
     }, []);
